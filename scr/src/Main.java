@@ -25,39 +25,54 @@ public class Main {
 
         System.out.println("-------------------------------------");
 
+        boolean repetir = true;
 
-        System.out.print("Digite primeiro número: ");
-        double valor1 = scanner.nextDouble();
-        calculadoraA.setValor1(valor1);
+        while (repetir) {
+            System.out.print("Digite primeiro número: ");
+            double valor1 = scanner.nextDouble();
+            calculadoraA.setValor1(valor1);
 
-        System.out.print("Digite segundo número: ");
-        double valor2 =scanner.nextDouble();
-        calculadoraA.setValor2(valor2);
+            System.out.print("Digite segundo número: ");
+            double valor2 =scanner.nextDouble();
+            calculadoraA.setValor2(valor2);
 
-        System.out.println("Escolha uma das operações: ");
-        System.out.println("1 - Soma");
-        System.out.println("2 - Subtração");
-        System.out.println("3 - Multiplicação");
-        System.out.println("4 - Divisão");
+            System.out.println("Escolha uma das operações: ");
+            System.out.println("1 - Soma");
+            System.out.println("2 - Subtração");
+            System.out.println("3 - Multiplicação");
+            System.out.println("4 - Divisão");
 
-        int escolha = scanner.nextInt();
+            int escolha = scanner.nextInt();
 
-        switch (escolha) {
-            case 1:
-                calculadoraA.mostrarResposta("Soma");
-                break;
-            case 2:
-                calculadoraA.mostrarResposta("Subtração");
-                break;
-            case 3:
-                calculadoraA.mostrarResposta("Multiplicação");
-                break;
-            case 4:
-                calculadoraA.mostrarResposta("Divisão");
-                break;
-            default:
-                System.out.println("Opção inválida.");
+            switch (escolha) {
+                case 1:
+                    calculadoraA.mostrarResposta("Soma");
+                    break;
+                case 2:
+                    calculadoraA.mostrarResposta("Subtração");
+                    break;
+                case 3:
+                    calculadoraA.mostrarResposta("Multiplicação");
+                    break;
+                case 4:
+                    calculadoraA.mostrarResposta("Divisão");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+
+            System.out.println("Deseja refazer?(1 - Sim / 2 - Não): ");
+
+            int continuar = scanner.nextInt();
+
+            if (continuar == 2) {
+                repetir = false;
+            }
+
+            scanner.nextLine();
         }
+        System.out.println("Calculadora desligando.");
+
         scanner.close();
     }
 }
